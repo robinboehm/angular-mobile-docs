@@ -1,14 +1,34 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="angular-mobile-docs">
 <head>
     <title>Angular Mobile Docs</title>
 </head>
-<body>
+<body ng-controller="ShameCtrl">
+
+{{ title }}
+
+<ul style="float:left">
+    <li ng-repeat="version in versions.data | filter:filterVersions() | orderBy:name:true">
+        <span ng-bind="version.name" ng-click="setVersion(version.name)"></span>
+    </li>
+</ul>
+<ul style="float:left">
+    <li ng-repeat="item in api.data">
+        <span ng-bind="item.name"></span>
+    </li>
+</ul>
+<div style="clear:both"></div>
 
 <!-- Scripts -->
-<script src="lib/angular/angular.min.js"></script>
-<script src="lib/angular/angular-route.min.js"></script>
-<script src="lib/angular/angular-animate.min.js"></script>
+<script src="lib/angular/angular.js" type="text/javascript"></script>
+<script src="lib/angular/angular-route.min.js" type="text/javascript"></script>
+<script src="lib/angular/angular-animate.min.js" type="text/javascript"></script>
+
+<!-- Application -->
+
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/ShameCtrl.js"></script>
+<script src="scripts/services/AngularGitFetchService.js" type="text/javascript"></script>
 
 </body>
 </html>
