@@ -8,7 +8,7 @@
 {{ title }}
 
 <ul style="float:left">
-    <li ng-repeat="version in versions.data | filter:filterVersions() | orderBy:name:true">
+    <li ng-repeat="version in versions.data | filter:filterVersions">
         <span ng-bind="version.name" ng-click="setVersion(version.name)"></span>
     </li>
 </ul>
