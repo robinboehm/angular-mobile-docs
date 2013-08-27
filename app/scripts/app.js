@@ -1,3 +1,3 @@
 'use strict'
 
-angular.module("angular-mobile-docs",["ngRoute","ngAnimate"]);
+angular.module("angular-mobile-docs",["ngRoute","ngAnimate","ngSanitize"]);
