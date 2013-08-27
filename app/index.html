@@ -3,6 +3,9 @@
 <head>
     <title>Angular Mobile Docs</title>
     <link rel="stylesheet" href="assets/stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="assets/stylesheets/angular/prettify.css">
+    <link rel="stylesheet" href="assets/stylesheets/angular/docs.css">
+    <link rel="stylesheet" href="assets/stylesheets/shame.css">
 </head>
 <body ng-controller="ShameCtrl">
 
@@ -16,7 +19,7 @@
       <select ng-model="currentVersion" ng-options="version.name for version in versions.data | filter:filterVersions"></select>
   </nav>
 
-  <div ng-view></div>
+  <div ng-view class="content"></div>
 
 </div>
 
@@ -27,6 +30,7 @@
 <script src="lib/angular/angular-sanitize.min.js" type="text/javascript"></script>
 
 <script src="lib/base64/base64.js" type="text/javascript"></script>
+<script src="lib/prettify/prettify.js" type="text/javascript"></script>
 
 <!-- Application -->
 
