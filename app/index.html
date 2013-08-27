@@ -7,13 +7,13 @@
 <body ng-controller="ShameCtrl">
 
 <div class="container">
-  <nav class="navbar navbar-inverse" role="navigation">
+  <nav ng-controller="NavbarCtrl" class="navbar navbar-inverse" role="navigation">
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
           <input ng-model="search" type="text" class="form-control" placeholder="Search">
         </div>
       </form>
-      <select ng-model="currentVersion" ng-options="version.name for version in versions.data | filter:filterVersions"></select>
+      <select ng-model="currentVersion" ng-options="version.name as version.name for version in versions.data | filter:filterVersions"></select>
   </nav>
 
   <div ng-view></div>
@@ -32,6 +32,7 @@
 
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers/ShameCtrl.js"></script>
+<script src="scripts/controllers/NavbarCtrl.js"></script>
 <script src="scripts/services/AngularGitFetchService.js" type="text/javascript"></script>
 
 </body>
