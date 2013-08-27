@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module("angular-mobile-docs", ["ngRoute","ngAnimate"])
+angular.module("angular-mobile-docs", ["ngRoute","ngAnimate","ngSanitize"])
   .config(function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/api/:version', { templateUrl: 'api.html', controller: 'ShameCtrl' })
