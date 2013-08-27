@@ -13,7 +13,7 @@
 
     <ul class="list-group">
     <li ng-repeat="version in versions.data | filter:filterVersions" class="list-group-item">
-        <span ng-bind="version.name" ng-click="setVersion(version.name)"></span>
+        <a href ng-bind="version.name" ng-click="setVersion(version.name)"></a>
     </li>
     </ul>
 
@@ -21,7 +21,7 @@
   <div class="col-lg-3">
     <ul style="float:left">
         <li ng-repeat="item in api.data">
-            <span ng-bind="item.name" ng-click="getPartial(config.version,item.name)"></span>
+            <a href ng-bind="item.name" ng-click="getPartial(config.version,item.name)"></a>
         </li>
     </ul>
   </div>
