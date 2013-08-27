@@ -6,27 +6,28 @@
 </head>
 <body ng-controller="ShameCtrl">
 
-{{ title }}
+<div class="container">
+  <nav class="navbar navbar-inverse" role="navigation">
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input ng-model="search" type="text" class="form-control" placeholder="Search">
+        </div>
+      </form>
+      <select ng-model="currentVersion" ng-options="version.name for version in versions.data | filter:filterVersions"></select>
+  </nav>
 
-<div class="row">
-  <div class="col-lg-3">
+  <div class="row">
+    <div class="col-lg-3">
+      <ul style="float:left">
+          <li ng-repeat="item in api.data | filter:search">
+              <a href ng-bind="item.name" ng-click="getPartial(config.version,item.name)"></a>
+          </li>
+      </ul>
+    </div>
+    <div class="col-lg-3" ng-bind="partial">
+    </div>
+  </div>
 
-    <ul class="list-group">
-    <li ng-repeat="version in versions.data | filter:filterVersions" class="list-group-item">
-        <a href ng-bind="version.name" ng-click="setVersion(version.name)"></a>
-    </li>
-    </ul>
-
-  </div>
-  <div class="col-lg-3">
-    <ul style="float:left">
-        <li ng-repeat="item in api.data">
-            <a href ng-bind="item.name" ng-click="getPartial(config.version,item.name)"></a>
-        </li>
-    </ul>
-  </div>
-  <div class="col-lg-3" ng-bind="partial">
-  </div>
 </div>
 
 <!-- Scripts -->
