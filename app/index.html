@@ -14,7 +14,7 @@
 </ul>
 <ul style="float:left">
     <li ng-repeat="item in api.data">
-        <span ng-bind="item.name"></span>
+        <span ng-bind="item.name" ng-click="getPartial(config.version,item.name)"></span>
     </li>
 </ul>
 <div style="clear:both"></div>
