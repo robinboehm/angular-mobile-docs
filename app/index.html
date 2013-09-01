@@ -5,21 +5,22 @@
     <link rel="stylesheet" href="assets/stylesheets/bootstrap.css">
     <link rel="stylesheet" href="assets/stylesheets/angular/prettify.css">
     <link rel="stylesheet" href="assets/stylesheets/angular/docs.css">
-    <link rel="stylesheet" href="assets/stylesheets/shame.css">
+    <link rel="stylesheet" data-ng-href="assets/stylesheets/shame.css">
 </head>
-<body ng-controller="ShameCtrl">
+<body ng-controller="MobileDocCtrl">
 
 <div class="container">
-  <nav ng-controller="NavbarCtrl" class="navbar navbar-inverse" role="navigation">
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input ng-model="search" type="text" class="form-control" placeholder="Search">
-        </div>
-      </form>
-      <select ng-model="currentVersion" ng-options="version.name as version.name for version in versions.data | filter:filterVersions"></select>
-  </nav>
+    <nav class="navbar navbar-inverse" role="navigation">
+        <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+                <input ng-model="search" type="text" class="form-control" placeholder="Search">
+            </div>
+        </form>
+        <select ng-model="config.version"
+                ng-options="version as version for version in versions.data | filter:filterVersions"></select>
+    </nav>
 
-  <div ng-view class="content"></div>
+    <div ng-view class="content"></div>
 
 </div>
 
@@ -32,12 +33,17 @@
 <script src="lib/base64/base64.js" type="text/javascript"></script>
 <script src="lib/prettify/prettify.js" type="text/javascript"></script>
 
+
+<!-- docs data -->
+<script src="assets/code.angularjs.org/1.2.0rc1/docs/docs-data.js" type="text/javascript"></script>
+
 <!-- Application -->
 
 <script src="scripts/app.js"></script>
-<script src="scripts/controllers/ShameCtrl.js"></script>
-<script src="scripts/controllers/NavbarCtrl.js"></script>
-<script src="scripts/services/AngularGitFetchService.js" type="text/javascript"></script>
+<script src="scripts/controllers/MobileDocCtrl.js"></script>
+<script src="scripts/controllers/ContentCtrl.js"></script>
+<script src="scripts/services/MockFetchService.js" type="text/javascript"></script>
+
 
 </body>
 </html>

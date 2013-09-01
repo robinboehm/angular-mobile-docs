@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-lg-3">
+        <ul>
+            <li ng-repeat="item in api.data | filter:search">
+                <a href="#/{{ config.version }}/api/{{ item }}" ng-bind="item"></a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-lg-9" ng-bind-html="partial">
+    </div>
+</div>
