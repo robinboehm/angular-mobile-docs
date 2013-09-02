@@ -1,10 +1,10 @@
 "use strict";
 
 angular.module("angular-mobile-docs")
-    .controller("MobileDocCtrl", function ($scope, FetchService, $location, $routeParams) {
+    .controller("MobileDocCtrl", function ($scope, FetchService, $location, $routeParams, initVersion) {
         // TODO: Should be injected via constant
         $scope.config = {
-            version: "1.2.0rc1"
+            version: initVersion
         };
 
         // Register search inside of this scope
@@ -18,27 +18,27 @@ angular.module("angular-mobile-docs")
         $scope.leftMenuActive = false;
         $scope.rightMenuActive = false;
 
-        $scope.swipeRight = function(){
+        $scope.swipeRight = function () {
             $scope.rightMenuActive = false;
-            if(!$scope.rightMenuActive){
+            if (!$scope.rightMenuActive) {
                 $scope.leftMenuActive = true;
             }
         }
 
-        $scope.swipeLeft = function(){
+        $scope.swipeLeft = function () {
             $scope.leftMenuActive = false;
-            if(!$scope.leftMenuActive){
+            if (!$scope.leftMenuActive) {
                 $scope.rightMenuActive = true;
             }
         }
 
         // Could be done in the html
-        $scope.handleLeftMenuClick = function(){
+        $scope.handleLeftMenuClick = function () {
             $scope.leftMenuActive = $scope.leftMenuActive;
         }
 
         // Could be done in the html
-        $scope.handleRightMenuClick = function(){
+        $scope.handleRightMenuClick = function () {
             $scope.rightMenuActive = $scope.leftMenuActive;
         }
 
