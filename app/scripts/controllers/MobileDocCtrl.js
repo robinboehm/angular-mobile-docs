@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("angular-mobile-docs")
-    .controller("MobileDocCtrl", function ($scope, MockFetchService, $location, $routeParams) {
+    .controller("MobileDocCtrl", function ($scope, FetchService, $location, $routeParams) {
         // TODO: Should be injected via constant
         $scope.config = {
             version: "1.2.0rc1"
@@ -11,8 +11,8 @@ angular.module("angular-mobile-docs")
         $scope.search = "";
 
         // Init
-        $scope.versions = MockFetchService.getVersionList();
-        $scope.api = MockFetchService.getFileList($scope.config.version);
+        $scope.versions = FetchService.getVersionList();
+        $scope.api = FetchService.getFileList($scope.config.version);
 
 
         $scope.filterVersions = function (item) {
@@ -30,7 +30,7 @@ angular.module("angular-mobile-docs")
                 return url;
             }
 
-            $scope.api = MockFetchService.getFileList($scope.config.version);
+            $scope.api = FetchService.getFileList($scope.config.version);
             $location.path(calculateRoute(currentValue));
         });
     })

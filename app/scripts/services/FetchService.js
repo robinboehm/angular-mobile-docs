@@ -1,26 +1,27 @@
 "use strict";
 
 angular.module("angular-mobile-docs")
-    .factory("MockFetchService", function ($http, $q) {
-
-        var config = {
-            url: "http://apidocs.angularjs.de/code/"
-        };
+    .factory("FetchService", function ($http, $q, baseUrl) {
 
         var getVersionList = function (version) {
-            return $http.get(config.url+"versions.json");
+            return $http.get(
+                baseUrl
+                    + "versions/"
+                    + "index.json");
         }
 
         var getFileList = function (version) {
             return $http.get(
-                config.url
+                baseUrl
+                    + "versions/"
                     + version
-                    + "/docs/partials/api/filelist.json");
+                    + ".api.json");
         }
 
         var getPartial = function (version, name) {
             return $http.get(
-                config.url
+                baseUrl
+                    + "code/"
                     + version
                     + "/docs/partials/api/" + name);
         }
