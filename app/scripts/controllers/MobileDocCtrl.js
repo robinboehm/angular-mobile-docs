@@ -15,6 +15,34 @@ angular.module("angular-mobile-docs")
         $scope.api = FetchService.getFileList($scope.config.version);
 
 
+        $scope.leftMenuActive = false;
+        $scope.rightMenuActive = false;
+
+        $scope.swipeRight = function(){
+            $scope.rightMenuActive = false;
+            if(!$scope.rightMenuActive){
+                $scope.leftMenuActive = true;
+            }
+        }
+
+        $scope.swipeLeft = function(){
+            $scope.leftMenuActive = false;
+            if(!$scope.leftMenuActive){
+                $scope.rightMenuActive = true;
+            }
+        }
+
+        // Could be done in the html
+        $scope.handleLeftMenuClick = function(){
+            $scope.leftMenuActive = $scope.leftMenuActive;
+        }
+
+        // Could be done in the html
+        $scope.handleRightMenuClick = function(){
+            $scope.rightMenuActive = $scope.leftMenuActive;
+        }
+
+
         $scope.filterVersions = function (item) {
             return !!(item.match(/^(1.0.[2-9])|(1.[1-9][0-9]?.\w+)/));
         }
