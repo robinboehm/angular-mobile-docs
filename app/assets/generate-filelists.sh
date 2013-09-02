@@ -13,7 +13,7 @@ for DIR in $(ls ${codeFolder} -p | grep "/" | grep -v "^0.")
 
         fileList=""
         # iterate over all files in %version%/api/*
-        for FILE in $(ls ${outputFolder}${DIR}docs/partials/api/ | sed -e 's/"/\\"/g')
+        for FILE in $(ls ${codeFolder}${DIR}docs/partials/api/ | sed -e 's/"/\\"/g')
             do
                 fileList=${fileList}\"${FILE}\",
             done
