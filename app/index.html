@@ -10,22 +10,22 @@
 <body ng-controller="MobileDocCtrl" ng-class="{'has-menu-left': leftMenuActive, 'has-menu-right': rightMenuActive}">
 
 <div id="sidebar-left">
-  menü
-</div>
-
-<div id="main">
-    <nav class="navbar navbar-inverse" role="navigation">
+    <nav class="navbar navbar-default" role="navigation">
         <form class="navbar-form navbar-left" role="search">
             <div class="form-group">
                 <input ng-model="search" type="text" class="form-control" placeholder="Search">
             </div>
         </form>
+    </nav>
+</div>
+
+<div id="main">
+    <nav class="navbar navbar-default" role="navigation">
+        <button class="btn" ng-click="leftMenuActive = !leftMenuActive">xxx</button>
+
         <select ng-model="config.version"
                 ng-options="version as version for version in versions.data | filter:filterVersions"></select>
     </nav>
-
-    <input type="checkbox" ng-model="leftMenuActive"> Left Menu
-    <input type="checkbox" ng-model="rightMenuActive"> Right Menu
 
     <div ng-view class="content"></div>
 </div>
