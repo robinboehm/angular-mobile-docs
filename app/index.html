@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="assets/stylesheets/angular/docs.css">
     <link rel="stylesheet" data-ng-href="assets/stylesheets/shame.css">
 </head>
-<body ng-controller="MobileDocCtrl" ng-class="{'has-menu-left': leftMenuActive, 'has-menu-right': rightMenuActive}">
+<body ng-controller="MobileDocCtrl" ng-class="{'has-menu-left': leftMenuActive, 'has-menu-right': rightMenuActive}" ng-swipe-left="swipeLeft()" ng-swipe-right="swipeRight()">
 
 <div id="sidebar-left">
     <nav class="navbar navbar-default" role="navigation">
@@ -19,7 +19,7 @@
     </nav>
 
             <ul class="list-group">
-            <li ng-repeat="item in api.data | filter:search">
+            <li ng-repeat="item in api.data | filter:search" class="list-group-item">
                 <a href="#/{{ config.version }}/api/{{ item }}" ng-bind="item"></a>
             </li>
         </ul>
