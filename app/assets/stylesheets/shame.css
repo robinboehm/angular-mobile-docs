@@ -2,3 +2,22 @@ a.improve-docs,
 a.view-source{
     display: none;
 }
+
+//.has-menu-left { background-color: #ff0000; }
+//.has-menu-right { background-color: #00ff00; }
+
+#sidebar-left {
+  position: absolute; width: 200px; top: 0; left: -200px; overflow: hidden;
+  -webkit-transition: all 1s;
+}
+
+#main {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 1s;
+}
+
+.has-menu-left #sidebar-left { left: 0; }
+.has-menu-left #main { left: 200px;}
