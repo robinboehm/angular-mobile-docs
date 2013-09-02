@@ -17,6 +17,13 @@
             </div>
         </form>
     </nav>
+
+            <ul class="list-group">
+            <li ng-repeat="item in api.data | filter:search">
+                <a href="#/{{ config.version }}/api/{{ item }}" ng-bind="item"></a>
+            </li>
+        </ul>
+
 </div>
 
 <div id="main">
