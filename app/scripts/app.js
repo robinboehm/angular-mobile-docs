@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module("angular-mobile-docs", ["ngRoute", "ngAnimate", "ngSanitize"])
+angular.module("angular-mobile-docs", ["ngRoute", "ngAnimate", "ngSanitize", "ngTouch"])
     .constant("baseUrl", "http://apidocs.angularjs.de/")
     .constant("initVersion", "1.2.0rc1")
     .config(function ($routeProvider, initVersion) {
