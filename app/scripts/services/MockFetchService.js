@@ -4,7 +4,7 @@ angular.module("angular-mobile-docs")
     .factory("MockFetchService", function ($http, $q) {
 
         var config = {
-            url: "http://localhost:8080/assets/code.angularjs.org/"
+            url: "http://apidocs.angularjs.de/code.angularjs.org/"
         };
 
         var getVersionList = function (version) {
