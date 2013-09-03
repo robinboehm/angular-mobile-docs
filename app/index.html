@@ -27,11 +27,11 @@
 <div id="main">
   <nav class="navbar navbar-default" role="navigation">
     <ul class="nav navbar-nav">
-      <li><button class="btn" ng-click="leftMenuActive = !leftMenuActive">xxx</button></li>
-      <li><h5>Angular Mobile Docs</h5></li>
+      <li class="navbar-form"><button class="btn" ng-click="leftMenuActive = !leftMenuActive">xxx</button></li>
+      <li><a class="navbar-brand" href="#">Angular Mobile Docs</a></li>
     </ul>
     <ul class="nav navbar-nav pull-right">
-      <li><button class="btn" ng-click="rightMenuActive = !rightMenuActive">{{config.version}}</button></li>
+      <li class="navbar-form"><button class="btn" ng-click="rightMenuActive = !rightMenuActive">{{config.version}}</button></li>
     </ul>
   </nav>
   <div ng-view class="content"></div>
