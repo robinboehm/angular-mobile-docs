@@ -16,7 +16,7 @@ angular.module('angular-mobile-docs')
 
 
         $scope.leftMenuActive = false;
-        $scope.rightMenuActive = false;
+        $scope.rightMenuActive = true;
 
         $scope.swipeRight = function () {
             if (!$scope.rightMenuActive) {
