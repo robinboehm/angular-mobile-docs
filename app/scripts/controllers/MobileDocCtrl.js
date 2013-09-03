@@ -2,7 +2,6 @@
 
 angular.module("angular-mobile-docs")
     .controller("MobileDocCtrl", function ($scope, FetchService, $location, $routeParams, initVersion) {
-        // TODO: Should be injected via constant
         $scope.config = {
             version: initVersion
         };
