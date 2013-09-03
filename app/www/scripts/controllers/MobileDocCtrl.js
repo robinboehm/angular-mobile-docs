@@ -16,7 +16,7 @@ angular.module('angular-mobile-docs')
 
 
         $scope.leftMenuActive = false;
-        $scope.rightMenuActive = true;
+        $scope.rightMenuActive = false;
 
         $scope.swipeRight = function () {
             if (!$scope.rightMenuActive) {
@@ -29,6 +29,16 @@ angular.module('angular-mobile-docs')
             if (!$scope.leftMenuActive) {
                 $scope.rightMenuActive = true;
             }
+            $scope.leftMenuActive = false;
+        };
+
+        $scope.clickLeft = function () {
+            $scope.leftMenuActive = !$scope.leftMenuActive;
+            $scope.rightMenuActive = false;
+        };
+
+        $scope.clickRight = function () {
+            $scope.rightMenuActive = !$scope.rightMenuActive;
             $scope.leftMenuActive = false;
         };
 

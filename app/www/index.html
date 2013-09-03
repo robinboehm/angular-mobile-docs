@@ -28,11 +28,11 @@
 <div id="main">
   <nav class="navbar navbar-inverse" role="navigation">
     <ul class="nav navbar-nav">
-      <li class="navbar-form"><button class="btn" ng-class="{active: leftMenuActive}" ng-click="leftMenuActive = !leftMenuActive">Functions</button></li>
+      <li class="navbar-form"><button class="btn" ng-class="{active: leftMenuActive}" ng-click="clickLeft()">Functions</button></li>
       <li><a class="navbar-brand" href="#">Angular Mobile Docs</a></li>
     </ul>
     <ul class="nav navbar-nav pull-right">
-      <li class="navbar-form"><button class="btn" ng-class="{active: rightMenuActive}" ng-click="rightMenuActive = !rightMenuActive">{{config.version}}</button></li>
+      <li class="navbar-form"><button class="btn" ng-class="{active: rightMenuActive}" ng-click="clickRight()">{{config.version}}</button></li>
     </ul>
   </nav>
   <div ng-view class="content"></div>
