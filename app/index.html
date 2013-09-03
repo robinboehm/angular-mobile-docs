@@ -10,7 +10,7 @@
 <body ng-controller="MobileDocCtrl" ng-class="{'has-menu-left': leftMenuActive, 'has-menu-right': rightMenuActive}"  ng-swipe-left="swipeLeft()" ng-swipe-right="swipeRight()">
 
 <div id="sidebar-left">
-  <nav class="navbar navbar-default" role="navigation">
+  <nav class="navbar navbar-inverse" role="navigation">
     <form class="navbar-form navbar-left" role="search">
       <div class="form-group">
         <input ng-model="search" type="text" class="form-control" placeholder="Search">
@@ -25,13 +25,13 @@
 </div>
 
 <div id="main">
-  <nav class="navbar navbar-default" role="navigation">
+  <nav class="navbar navbar-inverse" role="navigation">
     <ul class="nav navbar-nav">
-      <li class="navbar-form"><button class="btn" ng-click="leftMenuActive = !leftMenuActive">xxx</button></li>
+      <li class="navbar-form"><button class="btn" ng-class="{active: leftMenuActive}" ng-click="leftMenuActive = !leftMenuActive">Functions</button></li>
       <li><a class="navbar-brand" href="#">Angular Mobile Docs</a></li>
     </ul>
     <ul class="nav navbar-nav pull-right">
-      <li class="navbar-form"><button class="btn" ng-click="rightMenuActive = !rightMenuActive">{{config.version}}</button></li>
+      <li class="navbar-form"><button class="btn" ng-class="{active: rightMenuActive}" ng-click="rightMenuActive = !rightMenuActive">{{config.version}}</button></li>
     </ul>
   </nav>
   <div ng-view class="content"></div>
@@ -39,7 +39,7 @@
 
 <div id="sidebar-right">
   <ul class="list-group">
-    <li class="list-group-item" ng-class="{active: config.version == version}" ng-repeat="version in versions.data | filter:filterVersions"><a href ng-click="config.version = version">{{version}}</a></li>
+    <li class="list-group-item" ng-class="{active: config.version == version}" ng-repeat="version in versions.data | filter:filterVersions "><a href ng-click="config.version = version">{{version}}</a></li>
   </ul>
 </div>
 
