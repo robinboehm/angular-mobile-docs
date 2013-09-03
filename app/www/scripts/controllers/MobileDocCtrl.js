@@ -42,6 +42,12 @@ angular.module('angular-mobile-docs')
             $scope.leftMenuActive = false;
         };
 
+        $scope.selectVersion = function (version) {
+            $scope.config.version = version;
+            $scope.rightMenuActive = false;
+        };
+
+
         // Could be done in the html
         $scope.handleLeftMenuClick = function () {
             $scope.leftMenuActive = $scope.leftMenuActive;
