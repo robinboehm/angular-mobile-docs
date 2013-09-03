@@ -45,8 +45,18 @@ a.view-source{
 .list-doc-item {
   position: relative;
   display: block;
-  padding: 5px 10px;
   margin-bottom: -1px;
   background-color: #edf0f1;
   border: 1px solid #dddddd;
+}
+.list-doc-item a {
+  padding: 5px 10px;
+  display: block;
+  color: #333;
+}
+
+
+
+.list-doc-item.active {
+  background-color: #b0cbdc;
 }
