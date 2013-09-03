@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="assets/stylesheets/angular/prettify.css">
   <link rel="stylesheet" href="assets/stylesheets/angular/docs.css">
   <link rel="stylesheet" data-ng-href="assets/stylesheets/shame.css">
+  <meta name="viewport" content="width=device-width">
 </head>
 <body ng-controller="MobileDocCtrl" ng-class="{'has-menu-left': leftMenuActive, 'has-menu-right': rightMenuActive}"  ng-swipe-left="swipeLeft()" ng-swipe-right="swipeRight()">
 
@@ -38,6 +39,11 @@
 </div>
 
 <div id="sidebar-right">
+  <nav class="navbar navbar-inverse" role="navigation">
+    <ul class="nav navbar-nav">
+      <li><a class="navbar-brand" ng-click="rightMenuActive = !rightMenuActive">Versions</a></li>
+    </ul>
+  </nav>
   <ul class="list-group">
     <li class="list-doc-item" ng-class="{active: config.version == version}" ng-repeat="version in versions.data | filter:filterVersions "><a href ng-click="config.version = version">{{version}}</a></li>
   </ul>

@@ -21,6 +21,7 @@ a.view-source{
 
 #main {
   position: absolute;
+  width: 100;
   top: 0;
   left: 0;
   right: 0;
@@ -28,7 +29,7 @@ a.view-source{
 }
 
 .content {
-  padding: 10px;
+  padding: 0 10px;
 }
 
 .has-menu-left #sidebar-left { left: 0; }
@@ -37,7 +38,7 @@ a.view-source{
 .has-menu-right #sidebar-right { right: 0; }
 .has-menu-right #main { right: 200px;}
 
-.navbar { border-radius: 0; }
+.navbar { border-radius: 0; margin-bottom: 0; }
 .navbar-inverse { background-color: #414147; }
 
 .list-doc-item {
