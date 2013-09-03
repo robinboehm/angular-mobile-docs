@@ -11,13 +11,12 @@ a.view-source{
 #sidebar-left {
   position: absolute; width: 200px; top: 0; left: -200px; overflow: hidden;
   -webkit-transition: all 0.5s;
-  background-color: #edf0f1;
+
 }
 
 #sidebar-right {
   position: absolute; width: 200px; top: 0; right: -200px; overflow: hidden;
   -webkit-transition: all 0.5s;
-  background-color: #edf0f1;
 }
 
 #main {
@@ -40,3 +39,12 @@ a.view-source{
 
 .navbar { border-radius: 0; }
 .navbar-inverse { background-color: #414147; }
+
+.list-doc-item {
+  position: relative;
+  display: block;
+  padding: 5px 10px;
+  margin-bottom: -1px;
+  background-color: #edf0f1;
+  border: 1px solid #dddddd;
+}

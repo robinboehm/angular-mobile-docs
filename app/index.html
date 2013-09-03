@@ -18,7 +18,7 @@
     </form>
   </nav>
   <ul class="list-group">
-    <li ng-repeat="item in api.data | filter:search" class="list-group-item">
+    <li ng-repeat="item in api.data | filter:search" class="list-doc-item">
         <a href="#/{{ config.version }}/api/{{ item }}" ng-bind="item"></a>
     </li>
   </ul>
@@ -39,7 +39,7 @@
 
 <div id="sidebar-right">
   <ul class="list-group">
-    <li class="list-group-item" ng-class="{active: config.version == version}" ng-repeat="version in versions.data | filter:filterVersions "><a href ng-click="config.version = version">{{version}}</a></li>
+    <li class="list-doc-item" ng-class="{active: config.version == version}" ng-repeat="version in versions.data | filter:filterVersions "><a href ng-click="config.version = version">{{version}}</a></li>
   </ul>
 </div>
 
