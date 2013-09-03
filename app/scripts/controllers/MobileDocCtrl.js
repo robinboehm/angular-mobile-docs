@@ -1,13 +1,14 @@
-"use strict";
+'use strict';
 
-angular.module("angular-mobile-docs")
-    .controller("MobileDocCtrl", function ($scope, FetchService, $location, $routeParams, initVersion) {
+angular.module('angular-mobile-docs')
+    .controller('MobileDocCtrl', function ($scope, FetchService, $location, $routeParams, initVersion) {
+        // TODO: Should be injected via constant
         $scope.config = {
             version: initVersion
         };
 
         // Register search inside of this scope
-        $scope.search = "";
+        $scope.search = '';
 
         // Init
         $scope.versions = FetchService.getVersionList();
@@ -15,43 +16,43 @@ angular.module("angular-mobile-docs")
 
 
         $scope.leftMenuActive = false;
-        $scope.rightMenuActive = false;
+        $scope.rightMenuActive = true;
 
         $scope.swipeRight = function () {
-            $scope.rightMenuActive = false;
             if (!$scope.rightMenuActive) {
                 $scope.leftMenuActive = true;
             }
-        }
+            $scope.rightMenuActive = false;
+        };
 
         $scope.swipeLeft = function () {
-            $scope.leftMenuActive = false;
             if (!$scope.leftMenuActive) {
                 $scope.rightMenuActive = true;
             }
-        }
+            $scope.leftMenuActive = false;
+        };
 
         // Could be done in the html
         $scope.handleLeftMenuClick = function () {
             $scope.leftMenuActive = $scope.leftMenuActive;
-        }
+        };
 
         // Could be done in the html
         $scope.handleRightMenuClick = function () {
             $scope.rightMenuActive = $scope.leftMenuActive;
-        }
+        };
 
 
         $scope.filterVersions = function (item) {
             return !!(item.match(/^(1.0.[2-9])|(1.[1-9][0-9]?.\w+)/));
-        }
+        };
 
-        $scope.$watch('config.version', function (currentValue, oldValue) {
+        $scope.$watch('config.version', function (currentValue) {
             function calculateRoute(newVersion) {
-                var url = "/" + newVersion;
+                var url = '/' + newVersion;
 
                 if ($routeParams.name) {
-                    url += "/api/" + $routeParams.name;
+                    url += '/api/' + $routeParams.name;
                 }
 
                 return url;
