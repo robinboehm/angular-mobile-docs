@@ -1,6 +1,7 @@
 body {
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
+  overflow: hidden;
 }
 
 a.improve-docs,
@@ -21,7 +22,7 @@ a.view-source{
 
 #main {
   position: absolute;
-  width: 100;
+  width: 100%;
   top: 0;
   left: 0;
   right: 0;
@@ -33,10 +34,10 @@ a.view-source{
 }
 
 .has-menu-left #sidebar-left { left: 0; }
-.has-menu-left #main { left: 200px;}
+.has-menu-left #main { left: 200px; right: -200px;}
 
 .has-menu-right #sidebar-right { right: 0; }
-.has-menu-right #main { right: 200px;}
+.has-menu-right #main { right: 200px; left: -200px;}
 
 .navbar { border-radius: 0; margin-bottom: 0; }
 .navbar-inverse { background-color: #414147; }
