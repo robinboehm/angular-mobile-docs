@@ -19,8 +19,8 @@
     </form>
   </nav>
   <ul class="list-group">
-    <li ng-repeat="item in api.data | filter:search" class="list-doc-item">
-        <a href="#/{{ config.version }}/api/{{ item }}" ng-bind="item"></a>
+    <li ng-repeat="functiondoc in api.data | filter:search" class="list-doc-item">
+        <a href ng-click="selectFunctionDoc(functiondoc)" ng-bind="functiondoc"></a>
     </li>
   </ul>
 </div>
@@ -28,11 +28,11 @@
 <div id="main">
   <nav class="navbar navbar-inverse" role="navigation">
     <ul class="nav navbar-nav navbar-left">
-      <li class="navbar-form"><button class="btn" ng-class="{active: leftMenuActive}" ng-click="clickLeft()">Functions</button></li>
-      <li><a class="navbar-brand" href="#">Angular Mobile Docs</a></li>
+      <li class="navbar-form"><button class="btn" ng-class="{active: leftMenuActive}" ng-click="handleLeftMenuClick()">Functions</button></li>
+      <li><a class="navbar-brand" href="#">NG MobileDoc</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li class="navbar-form"><button class="btn" ng-class="{active: rightMenuActive}" ng-click="clickRight()">{{config.version}}</button></li>
+      <li class="navbar-form"><button class="btn" ng-class="{active: rightMenuActive}" ng-click="handleRightMenuClick()">{{config.version}}</button></li>
     </ul>
   </nav>
   <div ng-view class="content"></div>
@@ -41,11 +41,11 @@
 <div id="sidebar-right">
   <nav class="navbar navbar-inverse" role="navigation">
     <ul class="nav navbar-nav">
-      <li><a class="navbar-brand" ng-click="rightMenuActive = !rightMenuActive">Versions</a></li>
+      <li><a class="navbar-brand" ng-click="handleRightMenuClick()">Versions</a></li>
     </ul>
   </nav>
   <ul class="list-group">
-    <li class="list-doc-item" ng-class="{active: config.version == version}" ng-repeat="version in versions.data | filter:filterVersions "><a href ng-click="selectVersion(version)">{{version}}</a></li>
+    <li class="list-doc-item" ng-class="{active: config.version == version}" ng-repeat="version in versions.data | filter:filterVersions "><a href ng-click="selectVersion(version)" ng-bind="version"></a></li>
   </ul>
 </div>
 
