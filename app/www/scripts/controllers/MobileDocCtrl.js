@@ -32,30 +32,26 @@ angular.module('angular-mobile-docs')
             $scope.leftMenuActive = false;
         };
 
-        $scope.clickLeft = function () {
-            $scope.leftMenuActive = !$scope.leftMenuActive;
-            $scope.rightMenuActive = false;
-        };
-
-        $scope.clickRight = function () {
-            $scope.rightMenuActive = !$scope.rightMenuActive;
-            $scope.leftMenuActive = false;
-        };
-
         $scope.selectVersion = function (version) {
             $scope.config.version = version;
             $scope.rightMenuActive = false;
         };
 
+        $scope.selectFunctionDoc = function (functiondoc) {
+            $location.path('/'+ $scope.config.version + '/api/' + functiondoc);
+            $scope.leftMenuActive = false;
+        };
 
         // Could be done in the html
         $scope.handleLeftMenuClick = function () {
-            $scope.leftMenuActive = $scope.leftMenuActive;
+            $scope.leftMenuActive = !$scope.leftMenuActive;
+            $scope.rightMenuActive = false;
         };
 
         // Could be done in the html
         $scope.handleRightMenuClick = function () {
-            $scope.rightMenuActive = $scope.leftMenuActive;
+            $scope.rightMenuActive = !$scope.rightMenuActive;
+            $scope.leftMenuActive = false;
         };
 
 
