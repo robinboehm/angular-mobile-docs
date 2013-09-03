@@ -1,6 +1,7 @@
 body {
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
+  overflow: hidden;
 }
 
 a.improve-docs,
@@ -21,7 +22,7 @@ a.view-source{
 
 #main {
   position: absolute;
-  width: 100;
+  width: 100%;
   top: 0;
   left: 0;
   right: 0;
@@ -33,19 +34,63 @@ a.view-source{
 }
 
 .has-menu-left #sidebar-left { left: 0; }
-.has-menu-left #main { left: 200px;}
+.has-menu-left #main { left: 200px; right: -200px;}
 
 .has-menu-right #sidebar-right { right: 0; }
-.has-menu-right #main { right: 200px;}
+.has-menu-right #main { right: 200px; left: -200px;}
 
 .navbar { border-radius: 0; margin-bottom: 0; }
 .navbar-inverse { background-color: #414147; }
 
+  .navbar-nav {
+    float: left;
+    margin: 0;
+  }
+  .navbar-nav > li {
+    float: left;
+  }
+  .navbar-nav > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .navbar-left {
+    float: left !important;
+  }
+  .navbar-right {
+    float: right !important;
+  }
+  .navbar-form {
+    width: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-right: 0;
+    margin-left: 0;
+    border: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .navbar-form .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+
 .list-doc-item {
   position: relative;
   display: block;
-  padding: 5px 10px;
   margin-bottom: -1px;
   background-color: #edf0f1;
   border: 1px solid #dddddd;
+}
+.list-doc-item a {
+  padding: 5px 10px;
+  display: block;
+  color: #333;
+}
+
+
+
+.list-doc-item.active {
+  background-color: #b0cbdc;
 }
