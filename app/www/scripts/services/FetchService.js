@@ -3,11 +3,12 @@
 angular.module("angular-mobile-docs")
     .factory("FetchService", function ($http, $q, baseUrl) {
 
-        var getVersionList = function (version) {
+        var getVersionList = function () {
             return $http.get(
                 baseUrl
                     + "versions/"
-                    + "index.json");
+                    + "index.json"
+                , {cache: true});
         }
 
         var getFileList = function (version) {
@@ -15,7 +16,9 @@ angular.module("angular-mobile-docs")
                 baseUrl
                     + "versions/"
                     + version
-                    + ".api.json");
+                    + ".api.json"
+                , {cache: true}
+            );
         }
 
         var getPartial = function (version, name) {
@@ -23,7 +26,8 @@ angular.module("angular-mobile-docs")
                 baseUrl
                     + "code/"
                     + version
-                    + "/docs/partials/api/" + name);
+                    + "/docs/partials/api/" + name
+                , {cache: true});
         }
 
         var getAllPartials = function (version) {
