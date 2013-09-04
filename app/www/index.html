@@ -10,7 +10,7 @@
 </head>
 <body ng-controller="MobileDocCtrl" ng-class="{'has-menu-left': leftMenuActive, 'has-menu-right': rightMenuActive}"  ng-swipe-left="swipeLeft()" ng-swipe-right="swipeRight()">
 
-<div id="sidebar-left">
+<div class="sidebar-left" ng-show="leftMenuActive">
   <nav class="navbar navbar-inverse" role="navigation">
     <form class="navbar-form navbar-left" role="search">
       <div class="form-group">
@@ -38,7 +38,7 @@
   <div ng-view class="content"></div>
 </div>
 
-<div id="sidebar-right">
+<div class="sidebar-right" ng-show="rightMenuActive">
   <nav class="navbar navbar-inverse" role="navigation">
     <ul class="nav navbar-nav">
       <li><a class="navbar-brand" ng-click="handleRightMenuClick()">Versions</a></li>

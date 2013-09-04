@@ -9,11 +9,6 @@ a.view-source{
   display: none;
 }
 
-#sidebar-left {
-  position: absolute; width: 200px; top: 0; left: -200px; overflow: hidden;
-  -webkit-transition: all 0.5s;
-
-}
 
 #sidebar-right {
   position: absolute; width: 200px; top: 0; right: -200px; overflow: hidden;
@@ -33,10 +28,7 @@ a.view-source{
   padding: 0 10px;
 }
 
-.has-menu-left #sidebar-left { left: 0; }
 .has-menu-left #main { left: 200px; right: -200px;}
-
-.has-menu-right #sidebar-right { right: 0; }
 .has-menu-right #main { right: 200px; left: -200px;}
 
 .navbar { border-radius: 0; margin-bottom: 0; }
@@ -93,4 +85,40 @@ a.view-source{
 
 .list-doc-item.active {
   background-color: #b0cbdc;
+}
+
+
+.sidebar-left {
+  position: absolute; width: 200px; left: 0; top: 0; overflow: hidden;
+}
+.sidebar-left.ng-hide-add,.sidebar-left.ng-hide-remove{
+  -webkit-transition:all 0.5s;
+  -moz-transition:all 0.5s;
+  -o-transition:all 0.5s;
+  transition:all 0.5s;
+  display: block!important;
+}
+.sidebar-left.ng-hide-add.ng-hide-add-active,.sidebar-left.ng-hide-remove{
+  left: -200px;
+}
+.sidebar-left.ng-hide-add,.sidebar-left.ng-hide-remove.ng-hide-remove-active{
+  left: 0;
+}
+
+
+.sidebar-right {
+  position: absolute; width: 200px; right: 0; top: 0; overflow: hidden;
+}
+.sidebar-right.ng-hide-add,.sidebar-right.ng-hide-remove{
+  -webkit-transition:all 0.5s;
+  -moz-transition:all 0.5s;
+  -o-transition:all 0.5s;
+  transition:all 0.5s;
+  display: block!important;
+}
+.sidebar-right.ng-hide-add.ng-hide-add-active,.sidebar-right.ng-hide-remove{
+  right: -200px;
+}
+.sidebar-right.ng-hide-add,.sidebar-right.ng-hide-remove.ng-hide-remove-active{
+  right: 0;
 }
