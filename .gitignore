@@ -1,4 +1,16 @@
+# IntelliJ
 .idea
 *.iml
+
+# MacOS
 .DS_Store
-#app/platforms/
+
+# Android
+app/platforms/android/local.properties
+app/platforms/android/bin
+app/platforms/android/gen
+*.apk
+*.ap_
+*.dex
+*.class
+
