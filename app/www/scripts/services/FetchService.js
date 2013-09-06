@@ -22,7 +22,7 @@ angular.module("angular-mobile-docs")
                     + "versions/"
                     + version
                     + ".api.json"
-                , {cache: LocalStorageCache}
+                , {cache: (localStorage)?LocalStorageCache:true}
             );
         }
 
@@ -32,7 +32,7 @@ angular.module("angular-mobile-docs")
                     + "code/"
                     + version
                     + "/docs/partials/api/" + name
-                , {cache: LocalStorageCache});
+                , {cache: (localStorage)?LocalStorageCache:true});
         }
 
         var getAllPartials = function (version) {
