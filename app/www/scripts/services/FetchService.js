@@ -37,15 +37,20 @@ angular.module("angular-mobile-docs")
 
         var getAllPartials = function (version) {
             var promises = [];
+            var promise = $q.all(promises);
+
+
             getFileList(version)
                 .then(function (fileNameList) {
                     console.log(fileNameList);
+                    var i = 0;
                     angular.forEach(fileNameList.data, function (fileName) {
+                        promise.notify(++i,fileNameList.data.length);
                         promises.push(getPartial(version, fileName));
                     })
                 });
 
-            return $q.all(promises);
+            return promise;
         }
 
         return {
