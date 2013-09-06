@@ -7,6 +7,7 @@
 
 # Android
 app/platforms/android/local.properties
+app/platforms/android/assets
 app/platforms/android/bin
 app/platforms/android/gen
 *.apk
