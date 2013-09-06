@@ -1,14 +1,19 @@
 "use strict";
 
 angular.module("angular-mobile-docs")
-    .factory("FetchService", function ($http, $q, baseUrl) {
+    .factory("FetchService", function ($http, $q, LocalStorageCache, baseUrl) {
 
         var getVersionList = function () {
+            /*
+             TODO: LocalStorage for already downloaded files.
+             But also should fetch if net is available
+              */
             return $http.get(
                 baseUrl
                     + "versions/"
                     + "index.json"
-                , {cache: true});
+                , {cache: true}//{cache: LocalStorageCache}
+            );
         }
 
         var getFileList = function (version) {
@@ -17,7 +22,7 @@ angular.module("angular-mobile-docs")
                     + "versions/"
                     + version
                     + ".api.json"
-                , {cache: true}
+                , {cache: LocalStorageCache}
             );
         }
 
@@ -27,7 +32,7 @@ angular.module("angular-mobile-docs")
                     + "code/"
                     + version
                     + "/docs/partials/api/" + name
-                , {cache: true});
+                , {cache: LocalStorageCache});
         }
 
         var getAllPartials = function (version) {
