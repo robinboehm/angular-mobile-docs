@@ -22,7 +22,7 @@
     </nav>
     <ul class="list-group">
       <li ng-repeat="functiondoc in api.data | filter:search" class="list-doc-item">
-          <a href ng-click="selectFunctionDoc(functiondoc)" ng-bind="functiondoc"></a>
+          <a href ng-click="selectFunctionDoc(functiondoc)" ng-bind="functiondoc | cleandoc"></a>
       </li>
     </ul>
   </div>
@@ -74,6 +74,7 @@
 
 <!-- Application -->
 <script src="scripts/app.js" type="text/javascript"></script>
+<script src="scripts/filters/CleandocFilter.js" type="text/javascript"></script>
 <script src="scripts/controllers/MobileDocCtrl.js" type="text/javascript"></script>
 <script src="scripts/controllers/ContentCtrl.js" type="text/javascript"></script>
 <script src="scripts/services/FetchService.js" type="text/javascript"></script>
