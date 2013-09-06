@@ -86,7 +86,10 @@ a.view-source{
   display: block;
   color: #eee;
 }
-
+.list-doc-item a:hover {
+  text-decoration: none;
+  background-color: #b0cbdc;
+}
 
 
 .list-doc-item.active {
