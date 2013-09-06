@@ -2,6 +2,8 @@ body {
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
   max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 a.improve-docs,
@@ -9,30 +11,34 @@ a.view-source{
   display: none;
 }
 
-
-#sidebar-right {
-  position: absolute; width: 200px; top: 0; right: -200px; overflow: hidden;
-  -webkit-transition: all 0.5s;
+#wrapper {
+  position: relative;
 }
 
 #main {
+  margin-bottom:-9999;
+  padding-bottom:9999px;
   position: absolute;
   width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
   right: 0;
+  bottom: 0;
   -webkit-transition: all 0.5s;
+  background-color: #fff;
+  box-shadow: 0 0 10px #888888;
 }
 
 .content {
   padding: 0 10px;
 }
 
-.has-menu-left #main { left: 200px; right: -200px;}
-.has-menu-right #main { right: 200px; left: -200px;}
+.has-menu-left #main { left: 250px; right: -250px; }
+.has-menu-right #main { right: 250px; left: -250px;}
 
 .navbar { border-radius: 0; margin-bottom: 0; }
-.navbar-inverse { background-color: #414147; }
+.navbar-inverse { background-color: #595b5b; }
 
   .navbar-nav {
     float: left;
@@ -72,13 +78,13 @@ a.view-source{
   position: relative;
   display: block;
   margin-bottom: -1px;
-  background-color: #edf0f1;
-  border: 1px solid #dddddd;
+  background-color: #595b5b;
+  border-top: 1px solid #777;
 }
 .list-doc-item a {
-  padding: 5px 10px;
+  padding: 8px 10px;
   display: block;
-  color: #333;
+  color: #eee;
 }
 
 
@@ -89,36 +95,8 @@ a.view-source{
 
 
 .sidebar-left {
-  position: absolute; width: 200px; left: 0; top: 0; overflow: hidden;
+  position: absolute; width: 250px; left: 0; top: 0; overflow: hidden;
 }
-.sidebar-left.ng-hide-add,.sidebar-left.ng-hide-remove{
-  -webkit-transition:all 0.5s;
-  -moz-transition:all 0.5s;
-  -o-transition:all 0.5s;
-  transition:all 0.5s;
-  display: block!important;
-}
-.sidebar-left.ng-hide-add.ng-hide-add-active,.sidebar-left.ng-hide-remove{
-  left: -200px;
-}
-.sidebar-left.ng-hide-add,.sidebar-left.ng-hide-remove.ng-hide-remove-active{
-  left: 0;
-}
-
-
 .sidebar-right {
-  position: absolute; width: 200px; right: 0; top: 0; overflow: hidden;
-}
-.sidebar-right.ng-hide-add,.sidebar-right.ng-hide-remove{
-  -webkit-transition:all 0.5s;
-  -moz-transition:all 0.5s;
-  -o-transition:all 0.5s;
-  transition:all 0.5s;
-  display: block!important;
-}
-.sidebar-right.ng-hide-add.ng-hide-add-active,.sidebar-right.ng-hide-remove{
-  right: -200px;
-}
-.sidebar-right.ng-hide-add,.sidebar-right.ng-hide-remove.ng-hide-remove-active{
-  right: 0;
+  position: absolute; width: 250px; right: 0; top: 0; overflow: hidden;
 }
