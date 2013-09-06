@@ -4,16 +4,16 @@ angular.module('angular-mobile-docs').
         cache.get = function (key) {
             var item = localStorage.getItem(key);
             if (!item) return; // Cache miss
-            item = JSON.parse(item);
+            item = LZString.decompress(JSON.parse(item));
             return item.data; // Cache hit
         };
         cache.put = function (key, value) {
             if (typeof value.then === 'function') {
                 value.then(function (value) {
-                    localStorage.setItem(key, JSON.stringify(value));
+                    localStorage.setItem(key, LZString.compress(JSON.stringify(value)));
                 });
             } else {
-                localStorage.setItem(key, JSON.stringify(value));
+                localStorage.setItem(key, LZString.compress(JSON.stringify(value)));
             }
         };
         cache.remove = function (key) {
