@@ -4,7 +4,7 @@ angular.module('angular-mobile-docs').
         cache.get = function (key) {
             var item = localStorage.getItem(key);
             if (!item) return; // Cache miss
-            item = LZString.decompress(JSON.parse(item));
+            item = JSON.parse(LZString.decompress(item));
             return item.data; // Cache hit
         };
         cache.put = function (key, value) {
