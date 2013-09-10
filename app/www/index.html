@@ -3,16 +3,15 @@
 <head>
   <title>Angular Mobile Docs</title>
   <link rel="stylesheet" href="assets/stylesheets/bootstrap.css">
+  <link rel="stylesheet" href="assets/stylesheets/bootstrap-overrides.css">
   <link rel="stylesheet" href="assets/stylesheets/angular/prettify.css">
   <link rel="stylesheet" href="assets/stylesheets/angular/docs.css">
   <link rel="stylesheet" data-ng-href="assets/stylesheets/shame.css">
   <meta name="viewport" content="width=device-width">
 </head>
-<body ng-controller="MobileDocCtrl" ng-class="{'has-menu-left': leftMenuActive, 'has-menu-right': rightMenuActive}"  ng-swipe-left="swipeLeft()" ng-swipe-right="swipeRight()">
+<body ng-controller="MobileDocCtrl" class="cbp-spmenu-push " ng-class="{'body-push-toright': leftMenuActive, 'body-push-toleft': rightMenuActive}"  ng-swipe-left="swipeLeft()" ng-swipe-right="swipeRight()">
 
-<div id="wrapper">
-
-  <div class="sidebar-left">
+  <div class="sidebar sidebar-left" ng-class="{'sidebar-left-open': leftMenuActive}">
     <nav class="navbar navbar-inverse" role="navigation">
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
@@ -25,9 +24,10 @@
           <a href ng-click="selectFunctionDoc(functiondoc)" ng-bind="functiondoc | cleandoc"></a>
       </li>
     </ul>
+    menu
   </div>
 
-  <div class="sidebar-right">
+  <div class="sidebar sidebar-right" ng-class="{'sidebar-right-open': rightMenuActive}">
     <nav class="navbar navbar-inverse" role="navigation">
       <ul class="nav navbar-nav">
         <li><a class="navbar-brand" ng-click="handleRightMenuClick()">Versions</a></li>
@@ -51,10 +51,6 @@
     <div ng-view class="content"></div>
   </div>
 
-
-
-
-</div>
 
 
 <script language="javascript" src="lib/lz-string.js"></script>
