@@ -5,29 +5,28 @@ body {
   position: relative;
   left: 0;
   -webkit-transition: all 0.3s;
+  -webkit-transform: translate3d(0, 0, 0);
 }
-.body-push-toright { left: 240px; }
-.body-push-toleft { left: -240px; }
+.body-push-toright { -webkit-transform: translate3d(250px, 0, 0) }
+.body-push-toleft { -webkit-transform: translate3d(-250px, 0, 0) }
 
 /* SIDEBAR */
 .sidebar {
-  -webkit-transition: all 0.3s;
   position: fixed;
-  width: 240px;
+  width: 250px;
   height: 100%;
   top: 0;
   z-index: 1000;
 }
 .sidebar-left {
-  left: -240px;
+  left: -250px;
   box-shadow: 0 0 10px #888888 inset;
 }
 .sidebar-left.sidebar-left-open {
-  //left: 0;
   position: absolute;
 }
 .sidebar-right {
-  right: -240px;
+  right: -250px;
 }
 .sidebar-right.sidebar-right-open {
   position: absolute;
