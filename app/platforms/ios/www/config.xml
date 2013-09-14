@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="de.angularjs.mobiledocs" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <!-- Meta Description -->
-    <name>Angular Mobile Docs</name>
+    <name>AngularMobileDocs</name>
     <description>
         AngularJS Documentation for Mobile Devices.
     </description>
-    <author email="robinboehm@googlemail.com" href="http://angularjs.de">
+    <author email="angularjs.de@gmail.com" href="http://angularjs.de">
         AngularJS.DE Team
     </author>
 
@@ -13,7 +13,7 @@
     <feature name="http://api.phonegap.com/1.0/device" />
     <!-- Network -->
     <feature name="http://api.phonegap.com/1.0/network" />
-    <access origin="http://*" />
+    <access origin="*" />
 
     <!-- Preferences -->
     <preference name="permissions" value="none" />

@@ -1,14 +1,19 @@
 "use strict";
 
 angular.module("angular-mobile-docs")
-    .factory("FetchService", function ($http, $q, baseUrl) {
+    .factory("FetchService", function ($http, $q, LocalStorageCache, baseUrl) {
 
         var getVersionList = function () {
+            /*
+             TODO: LocalStorage for already downloaded files.
+             But also should fetch if net is available
+              */
             return $http.get(
                 baseUrl
                     + "versions/"
                     + "index.json"
-                , {cache: true});
+                , {cache: true}//{cache: LocalStorageCache}
+            );
         }
 
         var getFileList = function (version) {
@@ -17,7 +22,7 @@ angular.module("angular-mobile-docs")
                     + "versions/"
                     + version
                     + ".api.json"
-                , {cache: true}
+                , {cache: (localStorage)?LocalStorageCache:true}
             );
         }
 
@@ -27,18 +32,25 @@ angular.module("angular-mobile-docs")
                     + "code/"
                     + version
                     + "/docs/partials/api/" + name
-                , {cache: true});
+                , {cache: (localStorage)?LocalStorageCache:true});
         }
 
         var getAllPartials = function (version) {
             var promises = [];
-            var fileNameList = getFileList(version);
+            var promise = $q.all(promises);
 
-            angular.forEach(fileNameList, function (fileName) {
-                promises.push(getPartial(fileName, version));
-            })
 
-            return $q.all(promises);
+            getFileList(version)
+                .then(function (fileNameList) {
+                    console.log(fileNameList);
+                    var i = 0;
+                    angular.forEach(fileNameList.data, function (fileName) {
+                        promise.notify(++i,fileNameList.data.length);
+                        promises.push(getPartial(version, fileName));
+                    })
+                });
+
+            return promise;
         }
 
         return {
